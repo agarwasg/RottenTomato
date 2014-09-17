@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="cV0-hs-pqf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Movies-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" id="hWd-JW-gu9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.codepath.rottentomatoes.moviecell" rowHeight="74" id="B2i-cA-Xky" customClass="MoviewTableViewCell" customModule="RottenTomatoes" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2i-cA-Xky" id="B7H-gl-Hxj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bH0-em-7JW">
+                                                    <rect key="frame" x="0.0" y="-9" width="55" height="81.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Movie Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="anW-vV-7bx">
+                                                    <rect key="frame" x="84" y="0.0" width="220" height="73.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="anW-vV-7bx" id="SUM-Hy-W0S"/>
+                                            <outlet property="titleThumbnail" destination="bH0-em-7JW" id="QWb-SP-YUQ"/>
+                                            <segue destination="bpr-LS-gWT" kind="push" identifier="ShowDetails" id="WeZ-gR-AtR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="NHS-Qb-o9a"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="8mv-BP-YKx"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15S-Cn-8DN">
+                                <rect key="frame" x="5" y="-6" width="253" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Movies" id="TvO-GY-ZaT"/>
+                    <connections>
+                        <outlet property="movieTableView" destination="hWd-JW-gu9" id="MPL-OJ-QAu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155" y="206"/>
+        </scene>
+        <!--Movie Details View Controller-->
+        <scene sceneID="Ltk-x5-dM7">
+            <objects>
+                <viewController id="bpr-LS-gWT" customClass="MovieDetailsViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKT-0X-ZLP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="lF5-Uy-Qmv">
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="0Bh-an-ABU">
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j94-Cr-7Py">
+                                        <rect key="frame" x="-1" y="255" width="321" height="247"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis venenatis eros, posuere aliquam ipsum. Nunc vulputate neque vel turpis aliquet tincidunt. Sed tincidunt elit a urna sagittis, vel sollicitudin velit efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla mattis vitae nisl non blandit. Etiam at cursus odio, in mollis dolor. Nullam mauris tortor, tristique eget efficitur sit amet, eleifend et odio. Pellentesque mi lorem, facilisis et sapien ac, cursus convallis odio. Phasellus est elit, cursus vitae turpis et, convallis lacinia enim. Donec felis eros, blandit vehicula tincidunt vel, tincidunt ut enim.
+
+Morbi laoreet eu velit et feugiat. Suspendisse ornare lacus ac ligula consequat convallis. Nulla et pulvinar mauris, eget mattis sapien. Etiam id tortor sed arcu fringilla tristique. Duis rutrum magna sem, sed ornare augue lobortis a. Morbi posuere bibendum laoreet. Aenean lacinia quis enim tincidunt imperdiet. Maecenas convallis vulputate lectus nec rhoncus.
+
+Mauris vehicula urna odio, vel viverra lacus gravida at. Mauris at lacus metus. Sed cursus lectus ex, et facilisis diam ultrices sed. Mauris dapibus lacus erat, ac tempus tortor iaculis ut. Donec semper diam nec magna aliquam, semper vestibulum neque rutrum. Duis in leo consequat dui iaculis viverra sit amet sed urna. Ut mattis sed quam vel placerat. Sed eu risus interdum, interdum massa at, iaculis odio. Nam feugiat urna id leo consequat, eget pellentesque nisl lobortis. In accumsan vitae quam ac placerat.
+
+Ut nec feugiat ante, at porta justo. Curabitur pretium facilisis facilisis. Sed aliquam, leo sed vulputate consequat, nisi ante condimentum urna, vel consequat enim tortor vel tortor. Donec ullamcorper ligula sit amet purus dapibus iaculis. Vivamus lobortis nunc id magna tempor interdum. Aliquam a suscipit risus, quis convallis enim. Nunc hendrerit nisi in mattis varius. Nullam semper vel lacus viverra egestas. Nullam sed leo a neque ultricies scelerisque. In finibus mollis justo, et pharetra tortor posuere quis. Duis pulvinar ex vitae nisi commodo, ac vehicula sapien convallis.
+
+Curabitur id ex ante. Aliquam at arcu sed libero laoreet pretium. Phasellus ut efficitur ex. Nam sed elementum massa. Duis id ornare neque, et sollicitudin elit. Ut porttitor ornare neque sollicitudin vulputate. Ut iaculis, odio et condimentum scelerisque, massa dolor rutrum odio, ac congue purus quam et ipsum. Ut dui turpis, elementum eu scelerisque sed, eleifend ac magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla magna risus, auctor nec nulla eu, pretium semper sem. Etiam feugiat, orci non varius gravida, justo lorem tempus elit, sit amet mattis velit dolor sit amet est. Nullam eu laoreet erat, sed vehicula nunc. Vivamus quis neque velit.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LrG-ei-FkF"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="lF5-Uy-Qmv" id="F87-VE-ere"/>
+                        <outlet property="movieDetailsLabel" destination="j94-Cr-7Py" id="o4s-GC-lFz"/>
+                        <outlet property="movieScrollView" destination="0Bh-an-ABU" id="8Hb-2j-Xm8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4u-9J-9Ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pXw-NO-UXk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cV0-hs-pqf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZGK-fl-UGT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Uns-2h-aO2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6W-7i-3Oi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218" y="214"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
